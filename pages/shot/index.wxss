@@ -1,0 +1,285 @@
+/**index.wxss**/
+.container{
+  width: 100%;
+  height: 100%;
+  background: black;
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.btn1{
+  width: 335px;
+  height: 41px;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  margin-left: -168px;
+}
+
+.btn2{
+  width: 335px;
+  height: 41px;
+  display: block;
+  margin: 0 auto 20px auto;
+}
+
+.video-list{
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left:0;
+}
+
+.video-text{
+  font-size: 14px;
+  color: white;
+  margin: 0 20px;
+}
+
+.video-add{
+  display: inline-block;
+  vertical-align: top;
+  width: 80px;
+  height: 120px;
+  text-align: center;
+  margin: 20px 10px;
+}
+
+.video-add-btn{
+  width: 32px;
+  height: 32px;
+  margin-top: 44px;
+}
+
+.video-list-item{
+  display: inline-block;
+  vertical-align: top;
+  width: 78px;
+  height: 120px;
+  text-align: center;
+  margin: 20px 10px;
+  border: 1px solid transparent;
+  position: relative;
+}
+
+.video-list-item-text{
+  width: 20px;
+  height: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  text-align: center;
+  font-size: 12px;
+  line-height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.video-list-cover{
+  width: 78px;
+  height: 120px;
+}
+
+.video-list-con{
+  width: 100%;
+  overflow: scroll;
+}
+
+.video-list-main{
+  display: inline-block;
+  vertical-align: top;
+}
+
+.video-list-item-active{
+  border: 1px solid #F8E71C;
+}
+
+.video1{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.btns{
+  position: absolute;
+  width: 100%;
+  height: 41px;
+  bottom: 20px;
+  left: 0;
+  text-align: center;
+  z-index: 9;
+}
+
+.btn3, .btn4, .btn5{
+  width: 158px;
+  height: 41px;
+  margin: 0 10px;
+}
+
+.conditions{
+  width: 100%;
+  position: absolute;
+  top: 30%;
+  left: 0;
+  z-index: 2;
+}
+
+.condition-item{
+  margin-bottom: 20px;
+  font-size: 0;
+}
+
+.condition-item-1{
+  font-size: 14px;
+  color: white;
+  width: 10%;
+  display: inline-block;
+  vertical-align: top;
+  line-height: 40px;
+  text-align: center;
+}
+
+.condition-item-2{
+  font-size: 14px;
+  color: white;
+  width: 80%;
+  display: inline-block;
+  vertical-align: top;
+  line-height: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.condition-item-3{
+  font-size: 14px;
+  width: 10%;
+  display: inline-block;
+  vertical-align: top;
+  line-height: 40px;
+  text-align: center;
+}
+
+.video-link-btn{
+  width: 14px;
+  height: 13px;
+}
+
+.condition-item-input{
+  padding-left: 10px;
+  height: 40px;
+  line-height: 40px;
+}
+
+.video-modal{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: black;
+  z-index: 99;
+}
+
+.back{
+  width: 12px;
+  height: 19px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 9;
+}
+
+.btn6{
+  width: 335px;
+  height: 41px;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  margin-left: -168px;
+}
+
+.video-3{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.video-preview{
+  width: 100%;
+  height: calc(100% - 221px);
+  position: relative;
+}
+
+.video3{
+  width: 100%;
+  height: 100%;
+}
+
+.video-3-main{
+  height: 160px;
+  width: 100%;
+  overflow: scroll;
+}
+
+.video-conditions{
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+  z-index: 100;
+}
+
+.video-reply-btn{
+  position: relative;
+  height: 45px;
+  margin-top: 50px;
+}
+
+.video-reply-btn-text{
+  width: 100%;
+  height: 100%;
+  line-height: 45px;
+  height: 45px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.video-conditions-section{
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.25);
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 20px;
+}
+
+.video-preview-text{
+  font-size: 13px;
+  color: white;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  z-index: 5;
+  margin-left: -13px;
+}
+
+.video-sub-btn{
+  width: 160px;
+  height: 41px;
+  display: block;
+  margin: 0 auto 20px auto;
+}

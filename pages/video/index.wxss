@@ -1,0 +1,172 @@
+.container{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.video-container{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.video-container-small{
+  width: 100%;
+  height: calc(100% - 138px);
+  position: relative;
+}
+
+#explore-video{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 0;
+}
+
+.video-tool{
+  position: absolute;
+  top: 25%;
+  right: 20px;
+}
+
+.video-avatar{
+  position: absolute;
+  bottom: 10%;
+  left: 20px;
+}
+
+.video-tool-section{
+  width: 40px;
+  margin-bottom: 30px;
+  text-align: center;
+  color: white;
+  font-size: 13px;
+  position: relative;
+}
+
+.video-share{
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+}
+
+.video-share::after{
+  border: none;
+}
+
+.video-tool-icon{
+  width: 25px;
+  height: 25px;
+  position: relative;
+  z-index: 9;
+}
+
+.video-tool-avatar{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.video-conditions{
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+}
+
+.video-reply-btn{
+  position: relative;
+  height: 45px;
+  margin-top: 50px;
+}
+
+.video-reply-btn-text{
+  width: 100%;
+  height: 100%;
+  line-height: 45px;
+  height: 45px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.video-conditions-section{
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.25);
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 20px;
+}
+
+.video-reply{
+  background: black;
+  padding-top: 10px;
+}
+
+.video-reply-header{
+  margin: 0 20px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid white;
+  color: white;
+  font-size: 13px;
+}
+
+.video-reply-container{
+  width: 100%;
+  overflow: scroll;
+}
+
+.video-reply-section{
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  margin: 20px;
+}
+
+.video-reply-section-avatar{
+  width: 50px;
+  height: 50px;
+}
+
+.video-reply-section-count{
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  line-height: 16px;
+  width: 16px;
+  background: red;
+  color: white;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 12px;
+}
+
+.video-reply-section-text{
+  width: 50px;
+  height: 13px;
+  line-height: 13px;
+  text-overflow: ellipsis;
+  display: block;
+  font-size: 13px;
+  color: white;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.video-avatar-text{
+  display: block;
+  text-align: center;
+  color: white;
+  font-size: 13px;
+}

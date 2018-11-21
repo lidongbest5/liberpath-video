@@ -1,0 +1,60 @@
+<view class="container" wx:if="{{hasUserInfo}}">
+  <view class="user-info">
+    <image src="{{userInfo.avatarUrl}}" class="user-info-avatar"></image>
+    <view class="user-info-main">
+      <text class="user-name">{{userInfo.nickName}}</text>
+      <text class="user-place">{{userInfo.city}}</text>
+      <view class="user-bio">{{userInfo.bio}}</view>
+    </view>
+  </view>
+  <view class="user-info-tabs">
+    <view class="user-info-tab {{tab === 1 ? 'user-info-tab-active' : ''}}" bind:tap="onChangeTab" data-tab="1">制作</view>
+    <view class="user-info-tab {{tab === 2 ? 'user-info-tab-active' : ''}}" bind:tap="onChangeTab" data-tab="2">动态</view>
+    <view class="user-info-tab {{tab === 3 ? 'user-info-tab-active' : ''}}" bind:tap="onChangeTab" data-tab="3">收藏</view>
+  </view>
+  <view class="video-list">
+    <view class="video-list-item" wx:for="{{data}}">
+      <view class="video-list-item-left">
+        <image src="{{item.interactiveVideoCoverUrl}}" class="video-list-item-image"></image>
+        <image src="../../images/play.png" class="video-list-item-play"></image>
+      </view>
+      <view class="video-list-item-right">
+        <view class="video-list-item-name">{{userInfo.nickName}}</view>
+        <view class="video-list-item-info">
+          <image src="../../images/thumb.png" class="video-list-item-icon" style="margin-left: 0;"></image> 25点赞
+          <image src="../../images/share.png" class="video-list-item-icon"></image> 25转发
+          <image src="../../images/like.png" class="video-list-item-icon"></image> 25收藏
+        </view>
+        <view class="video-list-item-condition">
+          <text class="video-list-item-condition-text">A.{{item.playCondition.ROOT.childrenList[0]}}</text>
+          <view class="video-list-item-condition-main">
+            <view class="video-list-item-condition-left">
+              <view class="video-list-item-condition-percent" style="width: 70%">
+                70%
+              </view>
+              <text class="video-list-item-condition-text">10人</text>
+            </view>
+            <view class="video-list-item-condition-right">
+              <image src="../../images/reply.png" class="video-list-item-icon"></image> 25
+            </view>
+          </view>
+        </view>
+        <view class="video-list-item-condition">
+          <text class="video-list-item-condition-text">B.{{item.playCondition.ROOT.childrenList[1]}}</text>
+          <view class="video-list-item-condition-main">
+            <view class="video-list-item-condition-left">
+              <view class="video-list-item-condition-percent" style="width: 30%">
+                30%
+              </view>
+              <text>102人</text>
+            </view>
+            <view class="video-list-item-condition-right">
+              <image src="../../images/reply.png" class="video-list-item-icon"></image> 25
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+</view>

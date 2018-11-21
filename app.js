@@ -1,39 +1,116 @@
-//app.js
+const openIdUrl = require('./config').openIdUrl;
+const userRegisterUrl = require('./config').userRegisterUrl;
+
 App({
   onLaunch: function () {
-    // 展示本地存储能力
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
+    const self = this;
 
-    // 登录
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
+    wx.getStorage({
+      key: "session",
+      success: (data) => {
+        this.globalData.session = data.data;
+      },
+      fail: () => {
+        this.getUserId();
       }
-    })
-    // 获取用户信息
-    wx.getSetting({
-      success: res => {
-        if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-          wx.getUserInfo({
-            success: res => {
-              // 可以将 res 发送给后台解码出 unionId
-              this.globalData.userInfo = res.userInfo
+    });
 
-              // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-              // 所以此处加入 callback 以防止这种情况
-              if (this.userInfoReadyCallback) {
-                this.userInfoReadyCallback(res)
-              }
-            }
-          })
-        }
+    wx.getStorage({
+      key: "userInfo",
+      success: (data) => {
+        this.globalData.userInfo = data.data;
+      },
+      fail: () => {}
+    });
+  },
+  getUserId() {
+    const self = this;
+
+    wx.login({
+      success(data) {
+        wx.request({
+          url: openIdUrl,
+          method: "POST",
+          data: {
+            code: data.code,
+            appName: "liblux"
+          },
+          success(res) {
+            self.globalData.session = res.data.data;
+            wx.setStorage({
+              key: "session",
+              data: res.data.data,
+              success: () => {
+                self.checkUserInfo();
+              },
+              fail: () => {}
+            })
+          },
+          fail(res) {
+            
+          }
+        })
+      },
+      fail(err) {
+        
       }
     })
   },
+  checkUserInfo() {
+    const self = this;
+
+    wx.getStorage({
+      key: "userInfo",
+      success: (data) => {
+
+      },
+      fail: () => {
+        wx.getSetting({
+          success: res => {
+            if (res.authSetting['scope.userInfo']) {
+              wx.getUserInfo({
+                success: res => {
+                  const userInfo = res.userInfo;
+                  wx.request({
+                    url: userRegisterUrl,
+                    method: "POST",
+                    header: {
+                      'content-type': 'application/x-www-form-urlencoded'
+                    },
+                    data: {
+                      userID: self.globalData.session.userid,
+                      userName: userInfo.nickName,
+                      userLocation: userInfo.city,
+                      userBio: "",
+                      userProfile: userInfo.avatarUrl
+                    },
+                    success(res) {
+                      wx.setStorage({
+                        key: "userInfo",
+                        data: userInfo,
+                        success: () => {},
+                        fail: () => {}
+                      })
+                      self.globalData.userInfo = userInfo
+
+                      if (self.userInfoReadyCallback) {
+                        self.userInfoReadyCallback(userInfo)
+                      }
+                    },
+                    fail(res) {
+                      
+                    }
+                  })
+                }
+              })
+            }
+          }
+        })
+      }
+    });
+  },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    session: null
   }
 })

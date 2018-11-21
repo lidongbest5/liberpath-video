@@ -1,0 +1,72 @@
+<view class="container">
+  <view class="{{videoReply ? 'video-container-small' : 'video-container'}}">
+    <video src="" controls autoplay id="explore-video" bindended="onVideoEnd" bindplay="onVideoStart" ></video>
+    <cover-view class="video-avatar">
+      <cover-image src="../../images/head.png" class="video-tool-icon video-tool-avatar"></cover-image>
+      <cover-view class="video-avatar-text">@username</cover-view>
+    </cover-view>
+    <cover-view class="video-tool">
+      <cover-view class="video-tool-section">
+        <cover-image src="../../images/thumb.png" class="video-tool-icon" style="margin-bottom: -5px;"></cover-image>
+        123
+      </cover-view>
+      <cover-view class="video-tool-section">
+        <cover-image src="../../images/reply.png" class="video-tool-icon" style="margin-bottom: -5px;" bind:tap="onToggleReply"></cover-image>
+        23
+      </cover-view>
+      <cover-view class="video-tool-section">
+        <cover-image src="../../images/like.png" class="video-tool-icon" style="margin-bottom: -5px;"></cover-image>
+        123
+      </cover-view>
+      <cover-view class="video-tool-section">
+        <button open-type='share' class="video-share"><cover-image src="../../images/share.png" class="video-tool-icon" style="margin-bottom: -5px;" bind:tap="onShowShare"></cover-image></button>
+        66
+      </cover-view>
+    </cover-view>
+    <cover-view class="video-conditions" wx:if="{{videoStatus === 0}}">
+      <cover-view class="video-conditions-section">跳转条件1</cover-view>
+      <cover-view class="video-conditions-section">跳转条件2</cover-view>
+      <cover-view class="video-reply-btn">
+        <cover-image src="../../images/reply-bg.png" style="width: 279px; height: 45px;"></cover-image>
+        <cover-view  class="video-reply-btn-text">回复</cover-view>
+      </cover-view>
+    </cover-view>
+  </view>
+  <view class="video-reply">
+    <view class="video-reply-header">视频回复:</view>
+    <view class="video-reply-container">
+      <view style="width: {{6*90}}px">
+        <view class="video-reply-section">
+          <image src="../../images/head.png" class="video-reply-section-avatar"></image>
+          <view class="video-reply-section-count">2</view>
+          <text class="video-reply-section-text">sunny</text>
+        </view>
+        <view class="video-reply-section">
+          <image src="../../images/head.png" class="video-reply-section-avatar"></image>
+          <view class="video-reply-section-count">4</view>
+          <text class="video-reply-section-text">sunnydsadasdd</text>
+        </view>
+        <view class="video-reply-section">
+          <image src="../../images/head.png" class="video-reply-section-avatar"></image>
+          <view class="video-reply-section-count">6</view>
+          <text class="video-reply-section-text">sunny</text>
+        </view>
+        <view class="video-reply-section">
+          <image src="../../images/head.png" class="video-reply-section-avatar"></image>
+          <view class="video-reply-section-count">1</view>
+          <text class="video-reply-section-text">sunny</text>
+        </view>
+        <view class="video-reply-section">
+          <image src="../../images/head.png" class="video-reply-section-avatar"></image>
+          <view class="video-reply-section-count">3</view>
+          <text class="video-reply-section-text">sunny</text>
+        </view>
+        <view class="video-reply-section">
+          <image src="../../images/head.png" class="video-reply-section-avatar"></image>
+          <view class="video-reply-section-count">5</view>
+          <text class="video-reply-section-text">sunny</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

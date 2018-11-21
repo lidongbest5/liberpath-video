@@ -1,12 +1,39 @@
 {
   "pages":[
-    "pages/index/index",
-    "pages/logs/logs"
+    "pages/video/index",
+    "pages/user/index",
+    "pages/shot/index"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+  "window": {
+    "navigationBarTitleText": "LIBERPATH - Interactive Video",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTextStyle": "#fff",
+    "backgroundColor": "#000"
+  },
+  "tabBar": {
+    "color": "#fff",
+    "selectedColor": "#fff",
+    "borderStyle": "#262626",
+    "backgroundColor": "#262626",
+    "list": [
+      {
+        "pagePath": "pages/video/index",
+        "iconPath": "images/list-explore.png",
+        "selectedIconPath": "images/list-explore.png",
+        "text": "探索"
+      },
+      {
+        "pagePath": "pages/shot/index",
+        "iconPath": "images/list-shot.png",
+        "selectedIconPath": "images/list-shot.png",
+        "text": "制作"
+      },
+      {
+        "pagePath": "pages/user/index",
+        "iconPath": "images/list-me.png",
+        "selectedIconPath": "images/list-me.png",
+        "text": "我的"
+      }
+    ]
   }
 }

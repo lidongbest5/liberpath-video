@@ -1,22 +1,19 @@
 {
-	"description": "项目配置文件",
+	"description": "项目配置文件。",
 	"packOptions": {
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.4.0",
+	"libVersion": "1.0.0",
 	"appid": "wx067d3d2cc7f7da2e",
-	"projectname": "LIBERPATH",
-	"debugOptions": {
-		"hidedInDevtools": []
-	},
+	"projectname": "LIBERPATH - interactive video",
 	"isGameTourist": false,
 	"condition": {
 		"search": {
